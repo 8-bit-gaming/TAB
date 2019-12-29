@@ -258,7 +258,8 @@ public class Main extends JavaPlugin implements Listener, MainClass{
 		PluginHooks.groupManager = Bukkit.getPluginManager().getPlugin("GroupManager");
 		PluginHooks.placeholderAPI = Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI");
 		if (PluginHooks.placeholderAPI) PlaceholderAPIExpansion.register();
-		PluginHooks.permissionsEx = Bukkit.getPluginManager().isPluginEnabled("PermissionsEx");
+		//PluginHooks.permissionsEx = Bukkit.getPluginManager().isPluginEnabled("PermissionsEx");
+		PluginHooks.permissionsEx = false;
 		PluginHooks.libsDisguises = Bukkit.getPluginManager().isPluginEnabled("LibsDisguises");
 		PluginHooks.essentials = Bukkit.getPluginManager().getPlugin("Essentials");
 

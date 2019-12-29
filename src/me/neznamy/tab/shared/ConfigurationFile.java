@@ -42,7 +42,7 @@ public class ConfigurationFile{
 			options.setDefaultFlowStyle(DumperOptions.FlowStyle.BLOCK);
 			yaml = new Yaml(options);
 			input = new FileInputStream(file);
-			values = yaml.load(new InputStreamReader(input, Charset.forName("UTF-8")));
+			values = (Map<String, Object>) yaml.load(new InputStreamReader(input, Charset.forName("UTF-8")));
 			if (values == null) values = new HashMap<String, Object>();
 			input.close();
 			if (!hasComments()) fixComments();

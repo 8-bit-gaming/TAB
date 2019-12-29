@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.stream.Collectors;
 
+import ca.stellardrift.permissionsex.PermissionsEx;
+import ca.stellardrift.permissionsex.bukkit.PermissionsExPlugin;
 import org.anjocaido.groupmanager.GroupManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -15,7 +17,6 @@ import com.earth2me.essentials.Essentials;
 import com.massivecraft.factions.FPlayers;
 import com.massivecraft.factions.entity.MPlayer;
 
-import ch.soolz.xantiafk.xAntiAFKAPI;
 import me.clip.deluxetags.DeluxeTag;
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.lucko.luckperms.LuckPerms;
@@ -29,7 +30,6 @@ import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import protocolsupport.api.ProtocolSupportAPI;
-import ru.tehkode.permissions.bukkit.PermissionsEx;
 import us.myles.ViaVersion.api.Via;
 
 @SuppressWarnings({"rawtypes"})
@@ -156,7 +156,8 @@ public class PluginHooks {
 	@SuppressWarnings("deprecation")
 	public static String[] PermissionsEx_getGroupNames(ITabPlayer p) {
 		try {
-			return PermissionsEx.getUser(((TabPlayer)p).player).getGroupNames();
+			return new String[] {};
+			//return PermissionsEx.getUser(((TabPlayer)p).player).getGroups();
 		} catch (Throwable t) {
 			return Shared.error(new String[] {"null"}, "Failed to get permission groups of " + p.getName() + " using PermissionsEx", t);
 		}
@@ -251,6 +252,7 @@ public class PluginHooks {
 		}
 	}
 	public static boolean xAntiAFK_isAfk(ITabPlayer p) {
-		return xAntiAFKAPI.isAfk(((TabPlayer)p).player);
+	    return false;
+		//return xAntiAFKAPI.isAfk(((TabPlayer)p).player);
 	}
 }
